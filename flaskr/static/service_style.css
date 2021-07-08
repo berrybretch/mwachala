@@ -1,0 +1,21 @@
+body{
+    background-color: white;
+}
+.container{
+    display: flex;
+    width: 90vw;
+    border: 1px solid black;
+    margin: auto;
+}
+.navigation{
+    display: flex;
+    margin: auto;
+    width: 50vw;
+    border: 1px solid black;
+}
+h2{
+    flex: 3;
+    margin: auto;
+    border: 1px solid black;
+    text-align: center;
+}

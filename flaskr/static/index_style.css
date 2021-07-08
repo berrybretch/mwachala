@@ -1,0 +1,255 @@
+:root{
+    --font-size: 40px;
+    --service-flex:25;
+    --project-flex:25;
+}
+@font-face {
+    font-family: headings;
+    src: url("../static/fonts/Brown-Regular.woff");
+}
+
+@media screen
+    and (min-width:1024px)
+    {
+
+    body{
+        position: relative;
+        background-color: black;
+        display: flex;
+        overflow: hidden;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        transition: opacity 0.7s;
+    }
+    .bodyopaque{
+        opacity: 0;
+    }
+
+    .dmz{
+        border-radius: 50%;
+        border-color: #2196f3;
+        border-style: dotted;
+        background-color:none;
+        position: absolute;
+        width: 10vw;
+        height: 10vw;
+        left: 45vw;
+        top: 75vh;
+        z-index: 1;
+    }
+
+    .projects{
+        position: relative;
+        vertical-align: auto;
+        text-align: left;
+        font-size: var(--font-size);
+        font-weight: lighter;
+        background-color:black;
+        color: white;
+        transition: flex-grow, .3s;
+    }
+
+    .services{
+        position: relative;
+        text-align: center;
+        font-size: var(--font-size);
+        font-weight: lighter;
+        background-color:white;
+        color: black;
+        flex: var(--service-flex);
+        transition: flex-grow, .3s;
+    }
+    
+    #project_text{
+        font-family: headings;
+        font-size: 12vh;
+        transform-origin: center;
+        transform: translate(0,0) rotate(-90deg);
+        position: absolute;
+        top: 50vh;
+        margin-top: -6vh;
+        left: -10vw;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    #service_text{
+        font-family: headings;
+        font-size: 12vh;
+        transform-origin: center;
+        transform: translate(0,0) rotate(90deg);
+        position: absolute;
+        top: 50vh;
+        margin-top:-6vh;
+        right: -10vh;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    #project_text.right_forward{
+        animation-name: moveRightP;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    #project_text.right_reverse{
+        animation-name: moveLeftP;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    #service_text.left_forward{
+        animation-name: moveLeftS;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    #service_text.left_reverse{
+        animation-name: moveRightS;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    
+    #project_text.disappear{
+        animation-name: projectdisappear;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+    }
+    #service_text.disappear{
+        animation-name: servicedisappear;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: 1
+    }
+
+
+
+    @keyframes projectdisappear{
+        from{
+            opacity: 1;
+            transform: translate(2vw, 0) rotate(-90deg);
+        }
+        to{
+            opacity: 0;
+            transform: translate(0,0), rotate(-90deg);
+        }
+    }
+    @keyframes servicedisappear{
+        from{
+            opacity: 1;
+            transform:translate(0, 0) rotate(90deg)
+        }
+        to{
+            opacity: 0;
+            transform: translate(2vw,0) rotate(90deg);
+        }
+    }
+
+    @keyframes moveRightP {
+        from{
+            transform: translate(0, 0) rotate(-90deg);
+        }
+        to{
+            transform: translate(2vw, 0) rotate(-90deg);
+        }
+    }
+    @keyframes moveLeftP{
+        from{
+            transform: translate(2vw, 0) rotate(-90deg);
+        }
+        to{
+            transform: translate(0,0) rotate(-90deg);
+        }
+    }
+    @keyframes moveRightS {
+        from{
+            transform: translate(2vw, 0) rotate(90deg);
+        }
+        to{
+            transform: translate(0, 0) rotate(90deg);
+        }
+    }
+    @keyframes moveLeftS{
+        from{
+            transform: translate(0, 0) rotate(90deg);
+        }
+        to{
+            transform: translate(2vw,0) rotate(90deg);
+        }
+    }
+
+    .centerfold{
+        color: red;
+        font-weight: bold;
+        position: absolute;
+        flex-grow: 0;
+        left: 50vw;
+        width: 50vw;
+        margin-left:-25vw ;
+        z-index: 1;
+
+    }
+}
+@media screen 
+    and (min-width:300px)
+    and (max-width:600px)
+    {
+
+        body{
+            display: flex;
+            flex-flow: column wrap;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            background-color: green;
+        }
+        .projects{
+            position: relative;
+            background-color: black;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex: 1;
+        }
+        .services{
+            position: relative;
+            background-color: white;
+            color: black;
+            text-align: center;
+            display: flex;
+            flex: 1;
+        }
+        #service_text{
+            color: inherit;
+            text-decoration: none;
+            font-family: headings;
+            font-size: 9vw;
+            width: 100%;
+            text-align: center;
+            align-self: flex-start;
+        }
+        #project_text{
+            color: inherit;
+            text-decoration: none;
+            font-family: headings;
+            font-size: 9vw;
+            width: 100%;
+            text-align: center;
+            align-self: flex-end;
+        }
+    }
