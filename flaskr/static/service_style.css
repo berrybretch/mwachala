@@ -1,21 +1,43 @@
-body{
-    background-color: white;
+
+@font-face {
+    font-family: headings;
+    src: url("../static/fonts/Brown-Regular.woff");
 }
-.container{
-    display: flex;
-    width: 90vw;
-    border: 1px solid black;
-    margin: auto;
-}
-.navigation{
-    display: flex;
-    margin: auto;
-    width: 50vw;
-    border: 1px solid black;
-}
-h2{
-    flex: 3;
-    margin: auto;
-    border: 1px solid black;
-    text-align: center;
+
+@media screen 
+    and (max-width:700px) 
+    and (min-width:300px){
+
+    .navigation{
+        display: none;
+    }
+    .container{
+        display: flex;
+        flex-flow: column wrap;
+    }
+    .frontend{
+        text-align: center;
+        text-overflow: clip;
+        margin: 10px;
+        font-family: headings;
+        font-size: 3vw;
+    }
+    .backend{
+        text-align: center;
+        text-overflow: clip;
+        margin: 10px;
+        font-family: headings;
+        font-size: 3vw;
+    }
+    h1{
+        color: black;
+        margin: 10px;
+    }
+    p{
+        margin: 10px;
+    }
+    #dropdown{
+        width
+    }
+
 }

@@ -1,3 +1,4 @@
-document.body.onload = () =>{
-    console.log("here")
+const $ = document;
+$.body.onload = () => {
+    console.log("hi")
 }

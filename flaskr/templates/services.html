@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="{{css}}">
 </head>
 <body>
-    <div class="navigation">
-        <h2>Projects</h2>
-        <h2>Home</h2>
-        <h2>Services</h2>
-    </div>
+    <button id="dropdown"> </> </button>
+    <nav class="navigation">
+        <a href="{{url_for('projects_page')}}">Projects</a>
+        <a href="{{url_for('home_page')}}">Home</a>
+        <a href="{{url_for('services_page')}}">Services</a>
+    </nav>
     <div class="container">
         <div class="frontend">
-            <h1>Frontend development</h1>
+            <h1>FRONTEND</h1>
             <p>I can build out the visual components of your website as per your specifications to create a beautiful, interactive user experience.</p>
         </div>
         <div class="backend">
-            <h1>Backend development</h1>
-            <p>I can craft robust and secure server-side application logic for your business/product./p>
+            <h1>BACKEND</h1>
+            <p>I can craft robust and secure server-side application logic for your business/product.</p>
         </div>
         <div class="contacts">
             
